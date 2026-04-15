@@ -1,8 +1,10 @@
 import { sanityFetch } from "@/sanity/lib/live";
+import { ALL_CATEGORIES_QUERY } from "@/sanity/queries/categoties";
 
 export default async function home() {
-  const categoties = await sanityFetch({
-    query: `*[_type == "category"]`,
+  // Fetch categories for gilter sidebar
+  const { data: categoties } = await sanityFetch({
+    query: ALL_CATEGORIES_QUERY,
   });
 
   console.log("Categories:", categoties);
