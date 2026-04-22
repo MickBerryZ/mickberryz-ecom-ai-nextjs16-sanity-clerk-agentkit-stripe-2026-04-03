@@ -102,10 +102,7 @@ export default async function home({ searchParams }: PageProps) {
 
       {/* Category Tiles - Full Width */}
       <div className="mt-6">
-        <CategoryTiles
-          categories={categories}
-          activeCategory={categorySlug || undefined}
-        />
+        <CategoryTiles categories={categories} activeCategory={categorySlug} />
       </div>
 
       {/* Products Section */}

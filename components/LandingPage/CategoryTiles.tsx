@@ -5,7 +5,7 @@ import type { ALL_CATEGORIES_QUERYResult } from "@/sanity.types";
 
 interface CategoryTilesProps {
   categories: ALL_CATEGORIES_QUERYResult;
-  activeCategory: string;
+  activeCategory?: string;
 }
 
 export function CategoryTiles({
