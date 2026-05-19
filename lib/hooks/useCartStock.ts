@@ -56,7 +56,10 @@ export function useCartStock(items: CartItem[]): UseCartStockReturn {
       const newStockMap = new Map<string, StockInfo>();
 
       for (const item of items) {
-        const product = products.find((p) => p._id === item.productId);
+        const product = products.find(
+          // (p) => p._id === item.productId);
+          (p: { _id: string }) => p._id === item.productId,
+        );
         const currentStock = product?.stock ?? 0;
 
         newStockMap.set(item.productId, {
