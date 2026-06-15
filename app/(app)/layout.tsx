@@ -1,4 +1,6 @@
+import { AppShell } from "@/components/AppShell";
 import { CartSheet } from "@/components/CartSheet";
+import { ChatSheet } from "@/components/ChatSheet";
 import { Header } from "@/components/Header";
 import { Toaster } from "@/components/ui/sonner";
 import { CartStoreProvider } from "@/lib/store/cart-store-provider";
@@ -11,9 +13,12 @@ function Layout({ children }: { children: React.ReactNode }) {
     <ClerkProvider>
       <CartStoreProvider>
         <ChatStoreProvider>
-          <Header />
-          <main>{children}</main>
+          <AppShell>
+            <Header />
+            <main>{children}</main>
+          </AppShell>
           <CartSheet />
+          <ChatSheet />
           <Toaster position="bottom-center" />
           <SanityLive />
         </ChatStoreProvider>
